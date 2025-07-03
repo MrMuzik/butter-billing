@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
-import { HomeIcon, Squares2X2Icon, Cog6ToothIcon, ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
+import SidebarNav, { SidebarProfileLink } from "./SidebarNav";
 
 export default function Sidebar() {
   const [open, setOpen] = React.useState(true);
@@ -22,35 +23,8 @@ export default function Sidebar() {
           <ChevronRightIcon className="w-6 h-6" />
         )}
       </button>
-      <nav className="flex flex-col gap-2">
-        <a className={`btn btn-ghost relative px-2.5 justify-start`} href="/">
-          <HomeIcon className="w-6 h-6 flex-shrink-0" />
-          <span
-            className={`transition-all duration-300 left-[3.25rem] absolute
-              ${open ? " opacity-100" : " opacity-0 w-0 pointer-events-none"}`}
-          >
-            Home
-          </span>
-        </a>
-        <a className={`btn btn-ghost relative px-2.5 justify-start`} href="#">
-          <Squares2X2Icon className="w-6 h-6 flex-shrink-0" />
-          <span
-            className={`transition-all duration-300 left-[3.25rem] absolute
-              ${open ? " opacity-100" : " opacity-0 w-0 pointer-events-none"}`}
-          >
-            Dashboard
-          </span>
-        </a>
-        <a className={`btn btn-ghost relative px-2.5 justify-start`} href="#">
-          <Cog6ToothIcon className="w-6 h-6 flex-shrink-0" />
-          <span
-            className={`transition-all duration-300 left-[3.25rem] absolute
-              ${open ? " opacity-100" : " opacity-0 w-0 pointer-events-none"}`}
-          >
-            Settings
-          </span>
-        </a>
-      </nav>
+      <SidebarNav open={open} />
+      <SidebarProfileLink open={open} className="mt-auto" />
     </aside>
   );
 } 
