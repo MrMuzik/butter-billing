@@ -9,7 +9,7 @@ export default function Sidebar() {
 
   return (
     <aside
-      className={`bg-base-200 border-r border-base-300 p-4 transition-all duration-300 fixed left-0 top-0 bottom-0 z-20
+      className={`bg-base-200 border-r border-base-300 p-4 transition-all duration-300 fixed left-0 top-0 bottom-0 z-20 flex flex-col
         ${open ? "w-64" : "w-20"}`}
     >
       <button

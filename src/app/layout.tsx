@@ -6,11 +6,17 @@ import TopNav from "./TopNav";
 import { SidebarProvider } from "./SidebarContext";
 import { SidebarContent } from "./SidebarContent";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ 
+  subsets: ["latin"],
+  display: 'swap',
+  preload: true,
+});
 
 export const metadata: Metadata = {
   title: "Butter Billing",
   description: "A modern billing application",
+  viewport: "width=device-width, initial-scale=1",
+  themeColor: "#ffffff",
 };
 
 export default function RootLayout({
@@ -20,6 +26,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
       <body className={inter.className}>
         <SidebarProvider>
           <Sidebar />

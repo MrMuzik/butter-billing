@@ -1,6 +1,17 @@
 "use client";
 import React from "react";
-import { HomeIcon, Squares2X2Icon, Cog6ToothIcon, UserCircleIcon } from "@heroicons/react/24/outline";
+import { 
+  HomeIcon, 
+  Squares2X2Icon, 
+  Cog6ToothIcon, 
+  UserCircleIcon,
+  UserGroupIcon,
+  WrenchScrewdriverIcon,
+  DocumentTextIcon,
+  FolderIcon,
+  BanknotesIcon,
+  ChartBarIcon
+} from "@heroicons/react/24/outline";
 import SidebarNavLink from "./SidebarNavLink";
 
 interface SidebarNavProps {
@@ -14,14 +25,44 @@ export default function SidebarNav({ open }: SidebarNavProps) {
     <nav className="flex flex-col gap-2">
       <SidebarNavLink
         href="/"
-        title="Home"
-        icon={<HomeIcon className={iconClass} />}
+        title="Dashboard"
+        icon={<Squares2X2Icon className={iconClass} />}
         open={open}
       />
       <SidebarNavLink
-        href="#"
-        title="Dashboard"
-        icon={<Squares2X2Icon className={iconClass} />}
+        href="/clients"
+        title="Clients"
+        icon={<UserGroupIcon className={iconClass} />}
+        open={open}
+      />
+      <SidebarNavLink
+        href="/contractors"
+        title="Contractors"
+        icon={<WrenchScrewdriverIcon className={iconClass} />}
+        open={open}
+      />
+      <SidebarNavLink
+        href="/invoices"
+        title="Invoices"
+        icon={<DocumentTextIcon className={iconClass} />}
+        open={open}
+      />
+      <SidebarNavLink
+        href="/projects"
+        title="Projects"
+        icon={<FolderIcon className={iconClass} />}
+        open={open}
+      />
+      <SidebarNavLink
+        href="/expenses"
+        title="Expenses"
+        icon={<BanknotesIcon className={iconClass} />}
+        open={open}
+      />
+      <SidebarNavLink
+        href="/reports"
+        title="Reports"
+        icon={<ChartBarIcon className={iconClass} />}
         open={open}
       />
       <SidebarNavLink

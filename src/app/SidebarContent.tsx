@@ -10,8 +10,11 @@ export function SidebarContent({ children }: SidebarContentProps) {
 
   return (
     <div 
-      className="flex flex-col min-h-screen transition-all duration-300"
-      style={{ marginLeft: open ? "16rem" : "5rem" }} // 16rem = 256px (w-64), 5rem = 80px (w-20)
+      className="flex flex-col min-h-screen transition-all duration-300 ease-out"
+      style={{ 
+        marginLeft: open ? "16rem" : "5rem",
+        willChange: "margin-left"
+      }}
     >
       {children}
     </div>
