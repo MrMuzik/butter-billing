@@ -5,6 +5,8 @@ import Sidebar from "./Sidebar";
 import TopNav from "./TopNav";
 import { SidebarProvider } from "./SidebarContext";
 import { SidebarContent } from "./SidebarContent";
+import { StagewiseToolbar } from "@stagewise/toolbar-next";
+import ReactPlugin from "@stagewise-plugins/react";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -40,6 +42,11 @@ export default function RootLayout({
             </main>
           </SidebarContent>
         </SidebarProvider>
+        <StagewiseToolbar
+          config={{
+            plugins: [ReactPlugin],
+          }}
+        />
       </body>
     </html>
   );
